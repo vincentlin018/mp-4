@@ -18,6 +18,7 @@ const StyledHeader = styled.header`
     justify-content: space-between;
     align-items:center;
     height: 5rem;
+    width: 100%;
     
 `;
 
@@ -36,7 +37,7 @@ export default function Header() {
     return (
         <>
             <StyledHeader>
-                <StyledH2>Superheroes</StyledH2>
+                <StyledH2>Superhero Database</StyledH2>
 
                 <StyledNav>
                     <StyledLink href="/">

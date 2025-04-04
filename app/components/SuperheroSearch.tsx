@@ -6,10 +6,14 @@ import styled from "styled-components";
 import { SuperheroProps } from "@/types";
 
 const FormContainer = styled.form`
-    width: 24rem;
+    width: 30%;
+    min-width: 20rem;
     border-radius: 0.75rem;
     padding: 1rem;
     background-color: rgb(56, 189, 248);
+    margin: auto;
+    box-sizing: border-box;
+    
 `;
 
 const TextFieldStyled = styled(TextField)`
