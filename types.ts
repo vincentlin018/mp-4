@@ -1,11 +1,13 @@
+// Type definition for a superhero's properties used in the application
 export type SuperheroProps = {
     id: string;
     name: string;
-    fullname: string;  // This will come from biography["full-name"] in the API
-    publisher: string; // This will come from biography.publisher in the API
-    image: string;     // This will store the URL from image.url in the API
-}
+    fullname: string;
+    publisher: string;
+    image: string;
+};
 
+// Type definition for the structure of the API response
 export type SuperheroApiResponse = {
     response: string;
     "results-for": string;
