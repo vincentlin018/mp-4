@@ -13,23 +13,13 @@ const FormContainer = styled.form`
     background-color: rgb(56, 189, 248);
     margin: auto;
     box-sizing: border-box;
-    
-`;
-
-const TextFieldStyled = styled(TextField)`
-    background-color: white;
-    width: 100%;
-    margin-bottom: 1rem;
 `;
 
 const ButtonContainer = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-`;
-
-const ButtonStyled = styled(Button)`
-    width: 50%;
+    margin-top: 1rem;
 `;
 
 export default function SuperheroSearch({ onSearchResults, onError }: {
@@ -75,21 +65,27 @@ export default function SuperheroSearch({ onSearchResults, onError }: {
             e.preventDefault();
             void handleSearch();
         }}>
-            <TextFieldStyled
-                variant="filled"
+            <TextField
+                fullWidth
+                variant="outlined"
                 label="Superhero Name"
                 placeholder="Enter a superhero name"
                 value={superheroName}
                 onChange={(e) => setSuperheroName(e.target.value)}
+                sx={{
+                    backgroundColor: 'white',
+                    borderRadius: '4px'
+                }}
             />
             <ButtonContainer>
-                <ButtonStyled
+                <Button
                     variant="contained"
                     type="submit"
                     disabled={superheroName === "" || loading}
+                    sx={{ width: '50%' }}
                 >
                     {loading ? "Searching..." : "Search"}
-                </ButtonStyled>
+                </Button>
             </ButtonContainer>
         </FormContainer>
     );
