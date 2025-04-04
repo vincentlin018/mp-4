@@ -15,11 +15,25 @@ const FormContainer = styled.form`
     box-sizing: border-box;
 `;
 
+// Use && to increase specificity for styled Material UI components
+const TextFieldStyled = styled(TextField)`
+    && {
+        background-color: white;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+`;
+
 const ButtonContainer = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+`;
+
+const ButtonStyled = styled(Button)`
+    && {
+        width: 50%;
+    }
 `;
 
 export default function SuperheroSearch({ onSearchResults, onError }: {
@@ -65,27 +79,21 @@ export default function SuperheroSearch({ onSearchResults, onError }: {
             e.preventDefault();
             void handleSearch();
         }}>
-            <TextField
-                fullWidth
-                variant="outlined"
+            <TextFieldStyled
+                variant="filled"
                 label="Superhero Name"
                 placeholder="Enter a superhero name"
                 value={superheroName}
                 onChange={(e) => setSuperheroName(e.target.value)}
-                sx={{
-                    backgroundColor: 'white',
-                    borderRadius: '4px'
-                }}
             />
             <ButtonContainer>
-                <Button
+                <ButtonStyled
                     variant="contained"
                     type="submit"
                     disabled={superheroName === "" || loading}
-                    sx={{ width: '50%' }}
                 >
                     {loading ? "Searching..." : "Search"}
-                </Button>
+                </ButtonStyled>
             </ButtonContainer>
         </FormContainer>
     );
