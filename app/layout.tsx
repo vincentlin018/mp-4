@@ -7,7 +7,7 @@ import Header from './components/Header';
 // Styled component for the main body container
 const StyledBody = styled.div`
   width: 80%;
-  margin: auto;
+  margin: auto;  
   background-color: lightgoldenrodyellow;
   min-height: 100vh;
 `;
